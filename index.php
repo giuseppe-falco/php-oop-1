@@ -1,28 +1,65 @@
 <?php
     class User {
-        public $nome;
+        public $name;
+        public $surname;
         public $email;
-        public $eta;
+        public $age;
+        public $discount = 0;
 
-        public function __construct($nome, $email, $eta) {
-            $this->nome = $nome;
-            $this->email = $email;
-            $this->eta = $eta;
-        
+        //construct
+        public function __construct($name, $surname, $email, $age) {
+            $this -> name = $name;
+            $this -> surname = $surname;
+            $this -> email = $email;
+            $this -> age = $age;
+            
+            //check age for discount
+            if ($age > 65) {
+                $this -> discount = 40;
+            } 
+        }
+
+        //setter
+        public function setName($_name){
+            $this -> name = $_name;
+        }
+        public function setSurname($_surname){
+            $this -> surname = $_surname;
+        }
+        public function setAge($_age){
+            $this -> age = $_age;
+        }
+        public function setEmail($_email){
+            $this -> email = $_email;
+        }
+
+        //getter
+        public function getName(){
+            return $this -> name;
+        }
+        public function getSurname(){
+            return $this -> surname;
+        }
+        public function getAge(){
+            return $this -> age;
+        }
+        public function getEmail(){
+            return $this -> email;
         }
     }
 
 
-    $giuseppe = new User("giuseppe", "giuseppe@gmail.com", 50);
-    $pasquale = new User("pasquale", "pasquale@gmail.com", 50);
-    $nicola = new User("nicola", "nicola@gmail.com", 50);
-    $lucia = new User("lucia", "lucia@gmail.com", 50);
+    $giuseppe = new User("giuseppe", "falco", "giuseppe@gmail.com", 50);
+    $pasquale = new User("pasquale", "esposito", "pasquale@gmail.com", 42);
+    $nicola = new User("nicola", "de lucia", "nicola@gmail.com", 70);
+    $lucia = new User("lucia", "romano", "lucia@gmail.com", 50);
 
     $users = [$giuseppe, $pasquale, $nicola, $lucia];
 
-    
-?>
+    $giuseppe -> setName("giacomino");
+    echo $giuseppe -> getName("giacomino");
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,23 +73,26 @@
     <table>
         <thead>
             <tr>
-                <th>nome</th>
+                <th>name</th>
+                <th>surname</th>
                 <th>email</th>
-                <th>eta</th>
+                <th>age</th>
+                <th>discount</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($users as $user){ ?>
                 <tr>
-                    <td><?php echo $user -> nome ?></td>
+                    <td><?php echo $user -> name ?></td>
+                    <td><?php echo $user -> surname ?></td>
                     <td><?php echo $user -> email ?></td>
-                    <td><?php echo $user -> eta ?></td>
+                    <td><?php echo $user -> age ?></td>
+                    <td><?php echo $user -> discount ?></td>
                 </tr>
             <?php }?>
         </tbody>
     </table>
 </body>
 </html>
-
 
 
