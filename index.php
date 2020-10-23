@@ -19,33 +19,35 @@
             } 
         }
 
-        //setter
-        public function setName($_name){
-            $this -> name = $_name;
-        }
-        public function setSurname($_surname){
-            $this -> surname = $_surname;
-        }
-        public function setAge($_age){
-            $this -> age = $_age;
-        }
-        public function setEmail($_email){
-            $this -> email = $_email;
-        }
+        //insensate se variabili public
+        
+        // //setter
+        // public function setName($_name){
+        //     $this -> name = $_name;
+        // }
+        // public function setSurname($_surname){
+        //     $this -> surname = $_surname;
+        // }
+        // public function setAge($_age){
+        //     $this -> age = $_age;
+        // }
+        // public function setEmail($_email){
+        //     $this -> email = $_email;
+        // }
 
-        //getter
-        public function getName(){
-            return $this -> name;
-        }
-        public function getSurname(){
-            return $this -> surname;
-        }
-        public function getAge(){
-            return $this -> age;
-        }
-        public function getEmail(){
-            return $this -> email;
-        }
+        // //getter
+        // public function getName(){
+        //     return $this -> name;
+        // }
+        // public function getSurname(){
+        //     return $this -> surname;
+        // }
+        // public function getAge(){
+        //     return $this -> age;
+        // }
+        // public function getEmail(){
+        //     return $this -> email;
+        // }
     }
 
 
@@ -56,8 +58,8 @@
 
     $users = [$giuseppe, $pasquale, $nicola, $lucia];
 
-    $giuseppe -> setName("giacomino");
-    echo $giuseppe -> getName("giacomino");
+    // $giuseppe -> setName("giacomino");
+    // echo $giuseppe -> getName("giacomino");
 
 ?>
 
