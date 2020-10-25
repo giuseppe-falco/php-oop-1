@@ -1,10 +1,14 @@
+<!-- Esercizio di oggi: Classe User -->
+<!-- repo: php-oop-1
+Dovete creare ed utilizzare una classe User, proprio come abbiamo fatto in classe stamattina -->
+
 <?php
     class User {
-        public $name;
-        public $surname;
-        public $email;
-        public $age;
-        public $discount = 0;
+        private $name;
+        private $surname;
+        private $email;
+        private $age;
+        private $discount = 0;
 
         //construct
         public function __construct($name, $surname, $email, $age) {
@@ -21,33 +25,36 @@
 
         //insensate se variabili public
         
-        // //setter
-        // public function setName($_name){
-        //     $this -> name = $_name;
-        // }
-        // public function setSurname($_surname){
-        //     $this -> surname = $_surname;
-        // }
-        // public function setAge($_age){
-        //     $this -> age = $_age;
-        // }
-        // public function setEmail($_email){
-        //     $this -> email = $_email;
-        // }
+        //setter
+        public function setName($_name){
+            $this -> name = $_name;
+        }
+        public function setSurname($_surname){
+            $this -> surname = $_surname;
+        }
+        public function setAge($_age){
+            $this -> age = $_age;
+        }
+        public function setEmail($_email){
+            $this -> email = $_email;
+        }
 
-        // //getter
-        // public function getName(){
-        //     return $this -> name;
-        // }
-        // public function getSurname(){
-        //     return $this -> surname;
-        // }
-        // public function getAge(){
-        //     return $this -> age;
-        // }
-        // public function getEmail(){
-        //     return $this -> email;
-        // }
+        //getter
+        public function getName(){
+            return $this -> name;
+        }
+        public function getSurname(){
+            return $this -> surname;
+        }
+        public function getAge(){
+            return $this -> age;
+        }
+        public function getEmail(){
+            return $this -> email;
+        }
+        public function getDiscount(){
+            return $this -> discount;
+        }
     }
 
 
@@ -58,8 +65,9 @@
 
     $users = [$giuseppe, $pasquale, $nicola, $lucia];
 
-    // $giuseppe -> setName("giacomino");
-    // echo $giuseppe -> getName("giacomino");
+    $giuseppe -> setName("giacomino");
+    echo $giuseppe -> getName();
+    echo $pasquale -> getName();
 
 ?>
 
@@ -85,11 +93,11 @@
         <tbody>
             <?php foreach ($users as $user){ ?>
                 <tr>
-                    <td><?php echo $user -> name ?></td>
-                    <td><?php echo $user -> surname ?></td>
-                    <td><?php echo $user -> email ?></td>
-                    <td><?php echo $user -> age ?></td>
-                    <td><?php echo $user -> discount ?></td>
+                    <td><?php echo $user -> getName() ?></td>
+                    <td><?php echo $user -> getSurname() ?></td>
+                    <td><?php echo $user -> getEmail() ?></td>
+                    <td><?php echo $user -> getAge() ?></td>
+                    <td><?php echo $user -> getDiscount() ?></td>
                 </tr>
             <?php }?>
         </tbody>
